@@ -1,65 +1,14 @@
 import { Box, Image, Text, grid } from "@chakra-ui/react";
 import React from "react";
 import { Line } from "react-chartjs-2";
-
-const data = [
-  { name: "1", Earning: 300, Expense: 456 },
-  { name: "2", Earning: 100, Expense: 321 },
-  { name: "3", Earning: 9, Expense: 235 },
-  { name: "4", Earning: 53, Expense: 267 },
-  { name: "5", Earning: 43, Expense: 45 },
-  { name: "6", Earning: 222, Expense: 366 },
-  { name: "7", Earning: 372, Expense: 486 },
-  { name: "8", Earning: 182, Expense: 512 },
-  { name: "9", Earning: 164, Expense: 302 },
-  { name: "10", Earning: 316, Expense: 425 },
-  { name: "11", Earning: 131, Expense: 467 },
-  { name: "12", Earning: 154, Expense: 33 },
-  { name: "13", Earning: 205, Expense: 354 },
-  { name: "14", Earning: 70, Expense: 258 },
-  { name: "15", Earning: 53, Expense: 267 },
-  { name: "16", Earning: 43, Expense: 45 },
-  { name: "17", Earning: 222, Expense: 366 },
-  { name: "18", Earning: 372, Expense: 486 },
-  { name: "19", Earning: 53, Expense: 267 },
-  { name: "20", Earning: 43, Expense: 45 },
-];
-
-const ChartComponent = () => {
-  const chartData = {
-    labels: data.map((item) => item.name),
-    datasets: [
-      {
-        label: "Earning",
-        data: data.map((item) => item.Earning),
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
-        borderColor: "rgba(75, 192, 192, 1)",
-        borderWidth: 1,
-      },
-      {
-        label: "Expense",
-        data: data.map((item) => item.Expense),
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
-        borderColor: "rgba(255, 99, 132, 1)",
-        borderWidth: 1,
-      },
-    ],
-  };
-
-  const chartOptions = {
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  };
-
-  return (
-    <Box>
-      <Line data={chartData} options={chartOptions} />
-    </Box>
-  );
-};
+import O from "../source/overall.png";
+import G from "../source/graph.jpg";
+import A from "../source/activity.jpg";
+import T from "../source/Timeline.jpg";
+import RS from "../source/recent sale.jpg";
+import TU from "../source/TotalUser.jpg";
+import GW from "../source/Growth.jpg";
+import PN from "../source/PaperNote.jpg";
 
 const Dashboard = () => {
   return (
@@ -330,7 +279,144 @@ const Dashboard = () => {
             </Box>
           </Box>
         </Box>
-        <Box>{/* <ChartComponent /> */}</Box>
+      </Box>
+      <Box
+        // height={"150px "}
+        // border={"1px solid red"}
+        display={"flex"}
+        justifyContent={"space-around"}
+        backgroundColor={"#f7f8f9"}
+      >
+        <Box
+          width={"50%"}
+          margin={"20px"}
+          // border={"1px solid red"}
+          borderRadius={"15px"}
+          backgroundColor={"white"}
+          padding={"10px"}
+          boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;"
+        >
+          <Text textAlign={"left"} fontSize={"2xl"} fontWeight={600}>
+            Overall
+          </Text>
+          <Image src={G} />
+        </Box>
+        <Box
+          width={"30%"}
+          margin={"20px"}
+          // border={"1px solid red"}
+          borderRadius={"15px"}
+          backgroundColor={"white"}
+          padding={"10px"}
+          boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;"
+        >
+          <Text textAlign={"left"} fontSize={"2xl"} fontWeight={600}>
+            Recent Orders
+          </Text>
+          <Image src={O} />
+        </Box>
+      </Box>
+      <Box
+        display={"flex"}
+        backgroundColor={"#f7f8f9"}
+        gap={"20px"}
+        justifyContent={"space-around"}
+        padding={"30px"}
+      >
+        <Box
+          margin={"20px"}
+          // border={"1px solid red"}
+          borderRadius={"15px"}
+          backgroundColor={"white"}
+          padding={"10px"}
+          boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;"
+        >
+          <Text textAlign={"left"} fontSize={"2xl"} fontWeight={600}>
+            Activity
+          </Text>
+          <Image width={"80%"} src={A} margin={"auto"} />
+        </Box>
+        <Box
+          margin={"20px"}
+          // border={"1px solid red"}
+          borderRadius={"15px"}
+          backgroundColor={"white"}
+          padding={"10px"}
+          boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;"
+        >
+          <Text textAlign={"left"} fontSize={"2xl"} fontWeight={600}>
+            Recent Sale
+          </Text>
+          <Image width={"80%"} margin={"auto"} src={RS} />
+        </Box>
+        <Box
+          margin={"20px"}
+          // border={"1px solid red"}
+          borderRadius={"15px"}
+          backgroundColor={"white"}
+          padding={"10px"}
+          boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;"
+        >
+          {" "}
+          <Text textAlign={"left"} fontSize={"2xl"} fontWeight={600}>
+            Timeline
+          </Text>
+          <Image width={"80%"} src={T} />
+        </Box>
+      </Box>
+      <Box
+        display={"flex"}
+        backgroundColor={"#f7f8f9"}
+        gap={"20px"}
+        justifyContent={"space-around"}
+        padding={"30px"}
+      >
+        <Box>
+          <Box
+            margin={"20px"}
+            // border={"1px solid red"}
+            borderRadius={"15px"}
+            backgroundColor={"white"}
+            padding={"10px"}
+            boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;"
+          >
+            <Text textAlign={"left"} fontSize={"2xl"} fontWeight={600}>
+              Total User
+            </Text>
+            <Image width={"80%"} src={TU} />
+          </Box>
+          <Box
+            margin={"20px"}
+            // border={"1px solid red"}
+            borderRadius={"15px"}
+            backgroundColor={"white"}
+            padding={"10px"}
+            boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;"
+          >
+            <Text textAlign={"left"} fontSize={"2xl"} fontWeight={600}>
+              Followers Growth
+            </Text>
+            <Image width={"80%"} src={GW} />
+          </Box>
+        </Box>
+        <Box
+          margin={"20px"}
+          // border={"1px solid red"}
+          borderRadius={"15px"}
+          backgroundColor={"white"}
+          padding={"10px"}
+          boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;"
+        >
+          <Text textAlign={"left"} fontSize={"2xl"} fontWeight={600}>
+            Paper Notes
+          </Text>
+          <Image width={"80%"} src={PN} />
+        </Box>
+      </Box>
+      <Box>
+        <Text textAlign={"center"}>
+          Copyright 2023 © Cuba theme by pixelstrap
+        </Text>
       </Box>
     </Box>
   );
